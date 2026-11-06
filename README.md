@@ -21,6 +21,7 @@ A clean, responsive one-page site featuring:
 - An animated particle-network background (HTML canvas)
 - Fully responsive, with dark theme and reduced-motion support
 - Optimized images and a self-contained single `index.html`
+- Google Tag Manager (`GTM-N496CKG9`) for site analytics
 
 ## Structure
 
