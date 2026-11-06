@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kala Roberts — Product Leader, Builder, Creator</title>
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="description" content="Kala Roberts — product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter." />
+  <meta name="author" content="Kala Roberts" />
+  <meta name="theme-color" content="#0d0b08" />
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kala Roberts — Principal Product Leader" />
+  <meta property="og:description" content="Product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter." />
+  <meta property="og:image" content="kala-headshot.jpg" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kala Roberts — Principal Product Leader" />
+  <meta name="twitter:description" content="Product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter." />
+  <meta name="twitter:image" content="kala-headshot.jpg" />
+  <style>
+    :root {
+      --bg: #0d0b08;
+      --fg: #f0ece6;
+      --muted: #a39d94;
+      --accent: #ff7a4d;
+      --accent-soft: #2b1c13;
+      --border: #2a2620;
+      --card: rgba(31, 28, 22, 0.72);
+      --card-solid: #1f1c16;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.5);
+      --max-width: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 15% -5%, rgba(255,122,77,0.14), transparent 60%),
+        radial-gradient(1000px 500px at 100% 10%, rgba(255,122,77,0.08), transparent 55%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Animated particle canvas sits behind everything */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      display: block;
+    }
+
+    /* Translucent cards get a blur so the animation shows through subtly */
+    .about-card, .job, .chip, .video-frame, .art-placeholder {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .topnav {
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Nav */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topnav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .topnav nav {
+      display: flex;
+      gap: 26px;
+    }
+    .topnav nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .topnav nav a:hover { color: var(--accent); }
+    @media (max-width: 640px) { .topnav nav { display: none; } }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      padding: 88px 0 72px;
+    }
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 56px 0 48px;
+        gap: 32px;
+      }
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+    .hero-text .wave { color: var(--accent); }
+    .hero-text p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 0 28px;
+      max-width: 52ch;
+    }
+    @media (max-width: 720px) {
+      .hero-text p { margin-left: auto; margin-right: auto; }
+    }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--card);
+      box-shadow: var(--shadow);
+      justify-self: center;
+    }
+    @media (max-width: 720px) {
+      .hero-photo { width: 168px; height: 168px; order: -1; }
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 720px) { .btn-row { justify-content: center; } }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: var(--card);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn.primary:hover { opacity: 0.92; }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    .section-head {
+      margin: 0 0 36px;
+    }
+    .section-head h2 {
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    /* About */
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      font-size: 1.1rem;
+    }
+    .about-card p { margin: 0 0 18px; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card .article-link {
+      margin-top: 4px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+    .about-card .article-link a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .about-card .article-link a:hover { text-decoration: underline; }
+
+    /* Experience timeline */
+    .exp { display: grid; gap: 0; }
+    .job {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    .job:last-child { margin-bottom: 0; }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .job h3 { margin: 0; font-size: 1.12rem; }
+    .job .company { color: var(--accent); font-weight: 600; font-size: 0.96rem; margin: 2px 0 0; }
+    .job .dates {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .job ul { margin: 14px 0 0; padding-left: 18px; }
+    .job li { margin: 0 0 7px; font-size: 0.97rem; }
+    .job li:last-child { margin-bottom: 0; }
+
+    /* Expertise chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .chip {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Projects: video */
+    .video-frame {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow);
+    }
+    .video-frame video { display: block; width: 100%; height: auto; }
+    .caption { margin: 16px 0 0; font-size: 0.95rem; color: var(--muted); }
+
+    /* Art placeholder */
+    .art-placeholder {
+      border: 2px dashed var(--border);
+      border-radius: 18px;
+      padding: 56px 32px;
+      text-align: center;
+      background: var(--card);
+    }
+    .art-placeholder .emoji { font-size: 2.4rem; display: block; margin-bottom: 12px; }
+    .art-placeholder h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    .art-placeholder p { margin: 0 auto; color: var(--muted); max-width: 46ch; }
+    .art-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .art-thumbs .thumb {
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-soft), var(--border));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Art Gallery — framed like the sample */
+    .gallery-wall {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 22px;
+      padding: 48px 28px;
+      border-radius: 18px;
+      background:
+        radial-gradient(140% 100% at 85% 0%, rgba(255,245,225,0.10), transparent 55%),
+        linear-gradient(135deg, #343841 0%, #272a30 45%, #16171b 100%);
+      box-shadow: inset 0 20px 50px rgba(0,0,0,0.5), inset 0 -16px 40px rgba(0,0,0,0.45);
+      border: 1px solid #0c0d10;
+    }
+    @media (max-width: 760px) {
+      .gallery-wall { flex-wrap: wrap; gap: 26px; padding: 40px 18px; }
+      .art-piece { flex: 1 1 100%; max-width: 420px; }
+    }
+
+    /* each frame sizes to its own artwork (uncropped) */
+    .art-piece {
+      margin: 0;
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+        .frame {
+      margin: 0;
+      position: relative;
+      width: 100%;
+      padding: 18px;              /* the gold/silver moulding thickness */
+      border-radius: 4px;
+      /* braided metallic moulding, light from top-left */
+      background:
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.12) 0 3px, rgba(255,255,255,0.10) 3px 6px),
+        linear-gradient(135deg, #f1e4bd 0%, #b79a5c 20%, #8a7238 40%, #e9d9a6 55%, #7c6630 72%, #d8c48a 100%);
+      box-shadow:
+        0 28px 44px rgba(0,0,0,0.6),
+        0 10px 20px rgba(0,0,0,0.45),
+        inset 0 0 0 2px rgba(50,38,12,0.55),
+        inset 0 0 0 6px rgba(255,246,214,0.28),
+        inset 0 0 0 9px rgba(90,70,30,0.6),
+        inset 0 0 18px rgba(0,0,0,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    }
+    .frame::before {
+      content: "";
+      position: absolute;
+      top: -15px; left: 50%;
+      transform: translateX(-50%);
+      width: 7px; height: 7px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ccc, #555);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.7);
+    }
+    .art-piece:hover .frame {
+      transform: translateY(-8px) scale(1.02);
+      filter: brightness(1.05);
+      z-index: 3;
+    }
+
+    /* cream mat with a thin dark inner bevel, like the sample */
+    .frame img {
+      display: block;
+      width: 100%;
+      height: auto;               /* uncropped — natural aspect ratio */
+      border: 20px solid #efe9da; /* cream mat */
+      outline: 1px solid rgba(0,0,0,0.35);
+      outline-offset: -21px;      /* thin dark line at mat's inner edge */
+      background: #efe9da;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+    }
+
+    /* clickable art buttons */
+    .art-piece {
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      text-align: inherit;
+    }
+    .art-piece .frame::after {
+      /* subtle hover hint overlay */
+      content: "View";
+      position: absolute;
+      inset: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 14px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 45%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    .art-piece:hover .frame::after { opacity: 1; }
+
+    /* Lightbox overlay — words on a dark background */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background: rgba(8, 8, 10, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      max-width: 1000px;
+      width: 100%;
+    }
+    .lightbox-frame {
+      width: auto;
+      max-width: min(92vw, 760px);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.75),
+        inset 0 0 0 2px rgba(50,38,12,0.55),
+        inset 0 0 0 6px rgba(255,246,214,0.28),
+        inset 0 0 0 9px rgba(90,70,30,0.6),
+        inset 0 0 18px rgba(0,0,0,0.4);
+    }
+    .lightbox-frame::before { display: none; }  /* no hanging nail in the popup */
+    .lightbox img {
+      display: block;
+      width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      /* cream mat, matching the gallery frames */
+      border: 18px solid #efe9da;
+      outline: 1px solid rgba(0,0,0,0.35);
+      outline-offset: -19px;
+      background: #efe9da;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+    }
+    .lightbox-text {
+      text-align: center;
+      max-width: 680px;
+      color: #ece7dc;
+    }
+    .lightbox-text h3 {
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #f3e2b0;
+      letter-spacing: 0.01em;
+    }
+    .lightbox-text p {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: #d8d3c8;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 22px;
+      right: 26px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.18); transform: scale(1.05); }
+
+    /* Recommendations */
+    .recs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 760px) { .recs { grid-template-columns: 1fr; } }
+
+    .rec-card {
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .rec-card blockquote {
+      margin: 0;
+      position: relative;
+      padding-left: 30px;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--fg);
+    }
+    .rec-card blockquote::before {
+      content: "\201C";
+      position: absolute;
+      left: -4px;
+      top: -10px;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.6;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .rec-card figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .rec-name {
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--fg);
+    }
+    .rec-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.45;
+    }
+    .rec-rel {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    /* Respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      #bg-canvas { display: none; }
+      * { scroll-behavior: auto !important; }
+      .art-piece:hover .frame, .work-card:hover, .rec-card:hover, .btn:hover { transition: none; }
+    }
+
+    /* Contact */
+    .contact-card {
+      background: linear-gradient(135deg, var(--accent), #c7441d);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      color: #fff;
+    }
+    .contact-card h2 { margin: 0 0 12px; font-size: 1.9rem; }
+    .contact-card p { margin: 0 0 24px; opacity: 0.92; font-size: 1.05rem; }
+    .contact-card .btn {
+      background: #fff;
+      color: var(--accent);
+      border-color: #fff;
+    }
+    .contact-card .btn.ghost {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    footer {
+      padding: 40px 0 72px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="topnav">
+    <div class="wrap">
+      <a class="brand" href="#top">Kala <span>Roberts</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#art">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap" id="top">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Kala Roberts</h1>
+        <p>
+          Leader | Mother | Explorer | Creator | Lifelong Learner
+        </p>
+      </div>
+      <img class="hero-photo" src="kala-headshot.jpg" alt="Kala Roberts" />
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about-card">
+        <p>
+          I’m a leader with 17 years of experience steering product strategies that
+          align customer satisfaction with top-line growth. Throughout my
+          career, I’ve learned that bringing people together always results in
+          the best, most innovative solutions. Whether white boarding ideas
+          across engineering teams or aligning strategic priorities with
+          business leaders, I thrive on turning ambiguity into clarity and
+          delivering products that matter.
+        </p>
+        <p class="article-link">
+          Checkout this article with some of my perspectives:
+          <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned Working at Amazon →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
+      <div class="exp">
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Principal Product Manager – Tech, Amazon Fuse</h3>
+              <p class="company">Amazon.com · Raleigh, NC (Remote)</p>
+            </div>
+            <span class="dates">Nov 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Direct global product strategy, platform architecture, and multi-year roadmaps for Amazon’s global distribution platform across 50 marketplaces and 150+ telecom and enterprise partners, growing revenue by 35% YoY.</li>
+            <li>Define distribution strategies, regional plan tiers, and commercial deal constructs to bundle subscriptions (Prime, Prime Video, Audible, etc.) through partner service plans.</li>
+            <li>Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Customer Insights, and Partner Analytics within 6 months, driving a 25% increase in efficiency.</li>
+            <li>Own Amazon’s retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Principal Product Manager – Tech, Digital Acceleration</h3>
+              <p class="company">Amazon.com · Arlington, VA (Hybrid)</p>
+            </div>
+            <span class="dates">Sep 2023 – Nov 2024</span>
+          </div>
+          <ul>
+            <li>Single-Threaded Leader for Device and Subscription Bundling, governing the product vision and platform roadmap across 12 cross-functional engineering teams, driving a multi-billion increase in operating profit YoY.</li>
+            <li>Led content distribution architecture across 6 hardware device families (Echo, Fire TV, Tablet, Ring Cam, etc.) and 16 digital subscriptions (Kindle Unlimited, Audible, etc.).</li>
+            <li>Reduced partner onboarding and testing effort from 14 to 8 weeks via automated test case generation, self-service ingestion, and standardized technical specifications.</li>
+            <li>Designed a lifecycle entitlement and incentive engine, orchestrating automated customer journeys that incentivized over 1B high value user actions.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Sr. Product Manager – Tech, Digital Acceleration</h3>
+              <p class="company">Amazon.com · Arlington, VA (Hybrid)</p>
+            </div>
+            <span class="dates">Jul 2021 – Sep 2023</span>
+          </div>
+          <ul>
+            <li>Architected and scaled a multi-tenant customer engagement platform featuring configurable event-driven integration layers, enabling all clients to use custom event triggers and automate real-time customer journeys.</li>
+            <li>Established a shift in platform metrics from raw open/click rates to High-Value Action (HVA) lifecycle tracking (streaming, listening, shopping) for downstream monetization.</li>
+            <li>Integrated ML models into A/B testing experiment frameworks, expanding marketing reach by 41% YoY while reducing unsubscribe rates from 16.7% to 4.76%.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Sr. Product Manager, Sales Enablement Platforms</h3>
+              <p class="company">Amazon Web Services · Arlington, VA (Onsite)</p>
+            </div>
+            <span class="dates">Jul 2019 – Jul 2021</span>
+          </div>
+          <ul>
+            <li>Architected a contract lifecycle management platform, consolidating 12+ fragmented tools into an intelligent interface processing 60% of AWS revenue and cutting deal cycle times by 50%.</li>
+            <li>Managed, mentored, and developed a team of solution designers and product managers focused on seller enablement, CPQ automation, and quote-to-contract friction reduction.</li>
+            <li>Devised executive deal-approval governance frameworks and real-time margin analytics, improving deal profitability visibility for AWS field sales reps and sales operations.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Sr. Product Manager, Fulfillment by Amazon</h3>
+              <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
+            </div>
+            <span class="dates">Jan 2017 – Jul 2019</span>
+          </div>
+          <ul>
+            <li>Pioneered and launched a cloud-native warehouse management SaaS, converting merchant facilities into Prime fulfillment nodes, generating operating profit 27% higher than benchmark and adding 200k+ new products to Prime selection.</li>
+            <li>Owned the strategy for dangerous goods expansion including cross-border controls, adding 170k new catalog products and driving multi-billion dollar projected incremental annualized revenue.</li>
+            <li>Automated seller site deployment and configuration, reducing launch lead time from 8 weeks to 2 days across 27 distinct system steps.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Sr. Program Manager, Finance Technology</h3>
+              <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
+            </div>
+            <span class="dates">Nov 2011 – Jan 2017</span>
+          </div>
+          <ul>
+            <li>Led global finance platform expansion across 13 international marketplaces, establishing automated financial controls that reduced global billing defects by 45%.</li>
+            <li>Contributed to the WW Supplier Contract System audit presented to SVP/CFO leadership, remediating critical landed-cost variances and tightening administrative access controls.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div>
+              <h3>Financial Analyst, Finance Operations</h3>
+              <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
+            </div>
+            <span class="dates">Nov 2009 – Nov 2011</span>
+          </div>
+          <ul>
+            <li>Architected vendor returns costing logic and dispute resolution workflows across 6 global marketplaces, accelerating defect resolution times by 44% and increasing quality ratings by 4%.</li>
+            <li>Authored functional specifications for self-service vendor applications, streamlining damage claims, packaging defect investigations, and price protection reimbursements.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" playsinline poster="kala-highlights-poster.jpg">
+          <source src="kala-highlights.mp4" type="video/mp4" />
+          Your browser doesn’t support embedded video.
+          <a href="kala-highlights.mp4">Download the video</a> instead.
+        </video>
+      </div>
+      <p class="caption">Some highlights of publicly released projects I’ve worked on.</p>
+    </section>
+
+    <!-- Recommendations -->
+    <section id="recommendations">
+      <div class="section-head">
+        <h2>Recommendations</h2>
+      </div>
+      <div class="recs">
+        <figure class="rec-card">
+          <blockquote>
+            Kala has the exceptional ability to bridge the gap between complex technical challenges and business objectives. Her deep understanding of our technology ecosystem, combined with her product vision, enabled her to drive solutions that significantly improved our product offerings. She very quickly produces high-quality artifacts that articulate intricate technical strategies in a way that resonates with both technical and non-technical stakeholders. She also has a great understanding of UX and Design. Her collaborative spirit and commitment to raising the bar make her an invaluable asset to any organization. I wholeheartedly recommend Kala for any technical product leadership role.
+          </blockquote>
+          <figcaption>
+            <span class="rec-title">— Head of Product Management · Digital Acceleration</span>
+          </figcaption>
+        </figure>
+        <figure class="rec-card">
+          <blockquote>
+            It’s rare to find standout talent like Kala. I had the pleasure of having Kala report to me for three years at Amazon. She is reliable and solid. Her ability to juggle multiple projects while at the same time taking them to the next level was unlike any I’ve seen before. I was particularly impressed by Kala’s ability to learn complex subjects and systems quickly, proceed to formulate a vision, and work closely with partner teams to deliver strong results. Kala is someone I admire professionally and personally. I was very sad to see her leave my team, but at the same time, I was excited for her. As a colleague or leader, I am confident that Kala would be an asset to any team.
+          </blockquote>
+          <figcaption>
+            <span class="rec-title">— Head of Program Management · Finance Technology</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Art Gallery -->
+    <section id="art">
+      <div class="section-head">
+        <h2>Hobbies</h2>
+        <p>I enjoy hiking, sailing, and horseback riding. I also love experimenting with different recipes from cultures around the world to try with my family. Lately, I’ve gotten into acrylic painting. Click the samples of my work below to learn about my inspiration.</p>
+      </div>
+      <div class="gallery-wall">
+        <button type="button" class="art-piece" onclick="openArt(this)" data-title="My version of Starry Night" data-desc="I’ve always been drawn to Starry Night — the way Van Gogh turned a quiet night into something that comes alive — so I tried to recreate it. What I loved most about this painting was letting go of perfection. Not replicating a scene, but going with the flow." data-src="art-starry-night.jpg">
+          <div class="frame">
+            <img loading="lazy" decoding="async" width="834" height="648" src="art-starry-night.jpg" alt="Acrylic painting — a Starry Night interpretation with swirling sky and cypress tree" />
+          </div>
+        </button>
+        <button type="button" class="art-piece" onclick="openArt(this)" data-title="Owning the Night" data-desc="I painted these women as pure color and posture. Strip away the details and what’s left is friendship and confidence." data-src="art-three-women.jpg">
+          <div class="frame">
+            <img loading="lazy" decoding="async" width="564" height="664" src="art-three-women.jpg" alt="Acrylic painting — three women in red, orange, and yellow gowns on a starry night" />
+          </div>
+        </button>
+        <button type="button" class="art-piece" onclick="openArt(this)" data-title="Autumn Geese" data-desc="I enjoy hiking in all seasons, but especially fall. It’s the perfect weather here on the east coast, the surroundings are vibrant with color, and if you hike early enough it’s peaceful — the stillness only broken by surrounding wildlife. I painted this to remind me of the serenity I find in nature." data-src="art-autumn-lake.jpg">
+          <div class="frame">
+            <img loading="lazy" decoding="async" width="1003" height="799" src="art-autumn-lake.jpg" alt="Acrylic painting — autumn trees and Canada geese reflected in a still lake" />
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Let’s connect</h2>
+        <p>Always open to connecting with fellow product leaders and tech innovators.</p>
+        <div class="btn-row" style="justify-content:center;">
+          <a class="btn" href="https://linkedin.com/in/kalaroberts" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Art lightbox -->
+  <div class="lightbox" id="artLightbox" onclick="if(event.target===this)closeArt()">
+    <button class="lightbox-close" onclick="closeArt()" aria-label="Close">&times;</button>
+    <div class="lightbox-inner">
+      <div class="frame lightbox-frame">
+        <img id="lbImg" src="" alt="" />
+      </div>
+      <div class="lightbox-text">
+        <h3 id="lbTitle"></h3>
+        <p id="lbDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Kala Roberts
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Art lightbox
+    function openArt(el) {
+      document.getElementById("lbImg").src = el.getAttribute("data-src");
+      document.getElementById("lbImg").alt = el.getAttribute("data-title");
+      document.getElementById("lbTitle").textContent = el.getAttribute("data-title");
+      document.getElementById("lbDesc").textContent = el.getAttribute("data-desc");
+      document.getElementById("artLightbox").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function closeArt() {
+      document.getElementById("artLightbox").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeArt();
+    });
+  </script>
+  <script>
+    // Lightweight particle-network background (no libraries).
+    (function () {
+      const canvas = document.getElementById("bg-canvas");
+      const ctx = canvas.getContext("2d");
+      let w, h, dpr, particles, mouse = { x: null, y: null };
+      const ACCENT = [255, 122, 77];
+
+      function size() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = canvas.width = Math.floor(innerWidth * dpr);
+        h = canvas.height = Math.floor(innerHeight * dpr);
+        canvas.style.width = innerWidth + "px";
+        canvas.style.height = innerHeight + "px";
+      }
+
+      function makeParticles() {
+        const count = Math.min(90, Math.floor((innerWidth * innerHeight) / 16000));
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.35 * dpr,
+          vy: (Math.random() - 0.5) * 0.35 * dpr,
+          r: (Math.random() * 1.6 + 0.8) * dpr,
+        }));
+      }
+
+      function step() {
+        ctx.clearRect(0, 0, w, h);
+        const linkDist = 130 * dpr;
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+
+          // gentle mouse attraction
+          if (mouse.x !== null) {
+            const dx = mouse.x - p.x, dy = mouse.y - p.y;
+            const d = Math.hypot(dx, dy);
+            if (d < 160 * dpr && d > 0.1) {
+              p.x += (dx / d) * 0.4 * dpr;
+              p.y += (dy / d) * 0.4 * dpr;
+            }
+          }
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${ACCENT[0]},${ACCENT[1]},${ACCENT[2]},0.85)`;
+          ctx.shadowColor = `rgba(${ACCENT[0]},${ACCENT[1]},${ACCENT[2]},0.9)`;
+          ctx.shadowBlur = 8 * dpr;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < linkDist) {
+              const a = (1 - dist / linkDist) * 0.5;
+              ctx.strokeStyle = `rgba(${ACCENT[0]},${ACCENT[1]},${ACCENT[2]},${a})`;
+              ctx.lineWidth = 1 * dpr;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      addEventListener("resize", () => { size(); makeParticles(); });
+      addEventListener("mousemove", (e) => { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; });
+      addEventListener("mouseout", () => { mouse.x = null; mouse.y = null; });
+
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      size(); makeParticles();
+      if (reduceMotion) {
+        // Draw a single static frame instead of animating.
+        ctx.clearRect(0, 0, w, h);
+      } else {
+        step();
+      }
+    })();
+  </script>
+</body>
+</html>
