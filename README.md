@@ -10,7 +10,8 @@ A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pa
 
 A clean, one-page site featuring:
 
-- **About** — Professional summary and leadership philosophy
+- **Intro** — Professional summary and leadership philosophy, alongside a headshot
+- **Career Highlights** — A scannable 2x2 grid of core areas of focus
 - **Experience** — 17 years of product strategy across multiple Amazon teams
 - **Projects** — Highlight reel of large-scale initiatives
 - **Recommendations** — Endorsements from colleagues

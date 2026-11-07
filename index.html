@@ -175,7 +175,7 @@
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 48px;
-      align-items: center;
+      align-items: start;
       padding: 88px 0 72px;
     }
     @media (max-width: 720px) {
@@ -200,6 +200,25 @@
       margin: 0 0 28px;
       max-width: 52ch;
     }
+    .hero-text .hero-tagline {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+    .hero-text .hero-bio {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--fg);
+      margin: 0 0 16px;
+    }
+    .hero-text .hero-article {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .hero-text .hero-article a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .hero-text .hero-article a:hover { text-decoration: underline; }
     @media (max-width: 720px) {
       .hero-text p { margin-left: auto; margin-right: auto; }
     }
@@ -467,9 +486,11 @@
       max-width: 1000px;
       width: 100%;
     }
+    /* Lightbox image carries the gold frame + cream mat directly (no wrapper div) */
     .lightbox-frame {
       width: auto;
-      max-width: min(92vw, 760px);
+      max-width: min(86vw, 560px);
+      /* deeper drop shadow for the floating popup; gold moulding inherited from .frame */
       box-shadow: 0 28px 70px rgba(0,0,0,0.75),
         inset 0 0 0 2px rgba(50,38,12,0.55),
         inset 0 0 0 6px rgba(255,246,214,0.28),
@@ -477,17 +498,21 @@
         inset 0 0 18px rgba(0,0,0,0.4);
     }
     .lightbox-frame::before { display: none; }  /* no hanging nail in the popup */
+    /* Match the gallery's gold-to-mat ratio at the larger popup size */
+    .lightbox-frame.frame { padding: 3.5%; }
+    .lightbox .mat { padding: 4.5%; }
+    .lightbox .mat {
+      background: #efe9da;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+    }
     .lightbox img {
       display: block;
       width: 100%;
-      max-height: 60vh;
+      height: auto;
+      max-height: 56vh;
       object-fit: contain;
-      /* cream mat, matching the gallery frames */
-      border: 18px solid #efe9da;
-      outline: 1px solid rgba(0,0,0,0.35);
-      outline-offset: -19px;
+      outline: 1px solid rgba(0,0,0,0.3);
       background: #efe9da;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
     }
     .lightbox-text {
       text-align: center;
@@ -523,6 +548,42 @@
       transition: background 0.15s ease, transform 0.15s ease;
     }
     .lightbox-close:hover { background: rgba(255,255,255,0.18); transform: scale(1.05); }
+
+    /* Areas of Expertise */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 680px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+    }
+    .expertise-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .expertise-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .expertise-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .expertise-card li {
+      font-size: 0.93rem;
+      line-height: 1.5;
+      margin: 0 0 6px;
+      color: var(--fg);
+    }
+    .expertise-card li:last-child { margin-bottom: 0; }
 
     /* Recommendations */
     .recs {
@@ -639,7 +700,7 @@ footer {
         <span></span><span></span><span></span>
       </button>
       <nav id="siteNav" onclick="closeNav()">
-        <a href="#about">About</a>
+        <a href="#expertise">Career Highlights</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#recommendations">Recommendations</a>
@@ -653,35 +714,64 @@ footer {
     <header class="hero">
       <div class="hero-text">
         <h1>Kala Roberts</h1>
-        <p>
-          Leader | Mother | Explorer | Creator | Lifelong Learner
+        <p class="hero-bio">
+          I have 17 years of experience across multiple Amazon divisions
+          including Retail Finance, Multi-Channel Fulfillment, AWS, Digital &amp;
+          Devices, and 3P partnerships. I specialize in delivering products that
+          align customer satisfaction with top-line growth. Throughout my
+          career, I’ve learned that bringing people together results in
+          the best, most innovative solutions. Whether white boarding ideas
+          across engineering teams or aligning strategic priorities with
+          business leaders, I thrive on turning ambiguity into clarity and
+          delivering products that matter.
+        </p>
+        <p class="hero-article">
+          Learn more about some of my perspectives:
+          <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned →</a>
         </p>
       </div>
       <img class="hero-photo" src="kala-headshot.jpg" alt="Kala Roberts" />
     </header>
 
     <main>
-    <!-- About -->
-    <section id="about">
+    <!-- Expertise -->
+    <section id="expertise">
       <div class="section-head">
-        <h2>About</h2>
+        <h2>Career Highlights</h2>
       </div>
-      <div class="about-card">
-        <p>
-          I have 17 years of experience across multiple Amazon divisions
-          including Retail Finance, Multi-Channel Fulfillment, AWS, Digital &amp;
-          Devices, and 3P partnerships. I specialize in delivering products that
-          align customer satisfaction with top-line growth. Throughout my
-          career, I’ve learned that bringing people together always results in
-          the best, most innovative solutions. Whether white boarding ideas
-          across engineering teams or aligning strategic priorities with
-          business leaders, I thrive on turning ambiguity into clarity and
-          delivering products that matter.
-        </p>
-        <p class="article-link">
-          Checkout this article with some of my perspectives:
-          <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned Working at Amazon →</a>
-        </p>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>Enterprise AI &amp; Agentic Frameworks</h3>
+          <ul>
+            <li>GenAI Workflows &amp; Agentic PoC Design</li>
+            <li>RAG Architecture &amp; Data Foundations</li>
+            <li>Natural Language Analytics &amp; Multi-source Ingestion</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <h3>Scaled Content &amp; Distribution Systems</h3>
+          <ul>
+            <li>Telecom &amp; ISP Distribution</li>
+            <li>Subscription &amp; Device Bundles</li>
+            <li>Automated Marketing &amp; Promotions Systems</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <h3>Product &amp; Technical Leadership</h3>
+          <ul>
+            <li>Zero-to-Launch Ownership &amp; Monetization Strategy</li>
+            <li>Cross-Platform Development &amp; Cloud Strategy</li>
+            <li>Stakeholder Collaboration &amp; Data Governance</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <h3>Sales Enablement &amp; Commercial Constructs</h3>
+          <ul>
+            <li>Strategic Partnerships &amp; Guided Selling</li>
+            <li>Automated CPQ &amp; Free Cash Flow Modeling</li>
+            <li>Business to Business &amp; Business to Customer &amp; B2B2C</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -868,11 +958,13 @@ footer {
     </div>
 
   <!-- Art lightbox -->
-  <div class="lightbox" id="artLightbox" onclick="if(event.target===this)closeArt()">
+  <div class="lightbox" id="artLightbox" role="dialog" aria-modal="true" aria-label="Artwork detail" onclick="if(event.target===this)closeArt()">
     <button class="lightbox-close" onclick="closeArt()" aria-label="Close">&times;</button>
     <div class="lightbox-inner">
       <div class="frame lightbox-frame">
-        <img id="lbImg" src="" alt="" />
+        <div class="mat">
+          <img id="lbImg" src="" alt="" />
+        </div>
       </div>
       <div class="lightbox-text">
         <div id="lbTitle" class="lb-title"></div>
