@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="oceDgnUsRqU3GfoktyPGlEDbSneezcl-sLKOEzwvT9Y" />
   <title>Kala Roberts — Product Leader</title>
+  <link rel="canonical" href="https://kalaroberts.github.io/" />
   <!-- Google tag (gtm.js) -->
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N496CKG9"></script>
   <script>
@@ -493,7 +494,7 @@
       max-width: 680px;
       color: #ece7dc;
     }
-    .lightbox-text h3 {
+    .lightbox-text h3, .lightbox-text .lb-title {
       margin: 0 0 12px;
       font-size: 1.5rem;
       font-style: italic;
@@ -613,6 +614,21 @@ footer {
     }
     .footer-link:hover { color: var(--accent); transform: translateY(-1px); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kala Roberts",
+    "url": "https://kalaroberts.github.io/",
+    "image": "https://kalaroberts.github.io/kala-headshot.jpg",
+    "jobTitle": "Product Leader",
+    "description": "Product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter.",
+    "worksFor": { "@type": "Organization", "name": "Amazon" },
+    "sameAs": [
+      "https://www.linkedin.com/in/kalaroberts/"
+    ]
+  }
+  </script>
 </head>
 <body>
   <canvas id="bg-canvas"></canvas>
@@ -644,6 +660,7 @@ footer {
       <img class="hero-photo" src="kala-headshot.jpg" alt="Kala Roberts" />
     </header>
 
+    <main>
     <!-- About -->
     <section id="about">
       <div class="section-head">
@@ -846,6 +863,7 @@ footer {
         </button>
       </div>
     </section>
+    </main>
 
     </div>
 
@@ -857,7 +875,7 @@ footer {
         <img id="lbImg" src="" alt="" />
       </div>
       <div class="lightbox-text">
-        <h3 id="lbTitle"></h3>
+        <div id="lbTitle" class="lb-title"></div>
         <p id="lbDesc"></p>
       </div>
     </div>

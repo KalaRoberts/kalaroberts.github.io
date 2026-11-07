@@ -3,7 +3,7 @@
 A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pages, showcasing 17+ years of technical product leadership.
 
 🔗 **Live site:** https://kalaroberts.github.io  
-🔗 **LinkedIn:** [kalaroberts](https://linkedin.com/in/kalaroberts)  
+🔗 **LinkedIn:** [My LinkedIn Profile](https://linkedin.com/in/kalaroberts)  
 🔗 **Featured Article:** [Lessons Learned Working at Amazon](https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/)
 
 ## Overview
@@ -22,7 +22,7 @@ A clean, one-page site featuring:
 - **Visuals:** Custom animated particle-network background via HTML canvas
 - **Performance:** Fully responsive design, dark theme support, reduced-motion compliance, and optimized media assets
 - **Analytics:** Integrated via Google Tag Manager (`GTM-N496CKG9`)
-- **SEO & Search:** Open Graph / social preview tags, descriptive meta tags, and Google Search Console verification for indexing
+- **SEO & Search:** Semantic HTML landmarks (`<main>`, single `<h1>`, clean heading hierarchy), canonical URL, descriptive meta tags, Open Graph / social preview tags, JSON-LD `Person` structured data, a `sitemap.xml` + `robots.txt`, and Google Search Console verification for indexing
 
 ## Repository Structure
 
@@ -33,6 +33,8 @@ kala-highlights.mp4         Projects and product highlight reel video
 kala-highlights-poster.jpg  Optimized video poster frame
 art-*.jpg                   Interactive gallery artwork assets
 favicon.ico / *.png         Site icons
+sitemap.xml                 Sitemap for search engine discovery
+robots.txt                  Crawler directives (allows all, points to sitemap)
 ```
 
 ## Local preview
