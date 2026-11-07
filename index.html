@@ -118,7 +118,55 @@
       transition: color 0.15s ease;
     }
     .topnav nav a:hover { color: var(--accent); }
-    @media (max-width: 640px) { .topnav nav { display: none; } }
+    .nav-toggle {
+      display: none;             /* hidden on desktop */
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--fg);
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 640px) {
+      .nav-toggle { display: flex; }
+      .topnav nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: color-mix(in srgb, var(--bg) 96%, transparent);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.28s ease;
+      }
+      .topnav nav.open { max-height: 380px; }
+      .topnav nav a {
+        padding: 14px 28px;
+        font-size: 1rem;
+        border-top: 1px solid var(--border);
+      }
+    }
 
     /* Hero */
     .hero {
@@ -605,7 +653,10 @@
   <div class="topnav">
     <div class="wrap">
       <a class="brand" href="#top">Kala <span>Roberts</span></a>
-      <nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="siteNav" onclick="closeNav()">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -861,6 +912,21 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile hamburger nav
+    function toggleNav() {
+      var nav = document.getElementById("siteNav");
+      var btn = document.getElementById("navToggle");
+      var open = nav.classList.toggle("open");
+      btn.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    function closeNav() {
+      document.getElementById("siteNav").classList.remove("open");
+      var btn = document.getElementById("navToggle");
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
 
     // Art lightbox
     function openArt(el) {
