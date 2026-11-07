@@ -1,38 +1,38 @@
-# Kala Roberts — Personal Portfolio
+# Kala Roberts — Portfolio & Professional Site
 
-A single-page personal portfolio site, hosted on GitHub Pages.
+A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pages, showcasing 17+ years of technical product leadership.
 
-🔗 **Live site:** https://kalaroberts.github.io
+🔗 **Live site:** https://kalaroberts.github.io  
+🔗 **LinkedIn:** [kalaroberts](https://linkedin.com/in/kalaroberts)  
+🔗 **Featured Article:** [Lessons Learned Working at Amazon](https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/)
 
-## About
+## Overview
 
-A clean, responsive one-page site featuring:
+A clean, one-page site featuring:
 
-- **About** — a short professional bio
-- **Experience** — 17 years of product leadership across Amazon & AWS
-- **Projects** — an embedded highlight reel
-- **Recommendations** — colleague endorsements
-- **Hobbies** — an interactive art gallery (click a painting to read about its inspiration)
-- **Contact** — LinkedIn
+- **About** — Professional summary and leadership philosophy
+- **Experience** — 17 years of product strategy across multiple Amazon teams
+- **Projects** — Highlight reel of large-scale initiatives
+- **Recommendations** — Endorsements from colleagues
+- **Hobbies** — List of hobbies including an interactive personal art gallery
+- **Contact** — Directs to LinkedIn Profile
 
-## Built with
+## Technical Architecture & Built With
 
-- Plain HTML, CSS, and vanilla JavaScript — no frameworks or build step
-- An animated particle-network background (HTML canvas)
-- Fully responsive, with dark theme and reduced-motion support
-- Optimized images and a self-contained single `index.html`
-- Google Tag Manager (`GTM-N496CKG9`) for site analytics
+- **Core:** Pure HTML5, CSS3, and vanilla JavaScript (zero build steps, frameworks, or external dependencies)
+- **Visuals:** Custom animated particle-network background via HTML canvas
+- **Performance:** Fully responsive design, dark theme support, reduced-motion compliance, and optimized media assets
+- **Analytics:** Integrated via Google Tag Manager (`GTM-N496CKG9`)
 
-## Structure
+## Repository Structure
 
-```
-index.html                  the whole site (HTML + CSS + JS inline)
-kala-headshot.jpg           hero photo
-kala-highlights.mp4         projects video
-kala-highlights-poster.jpg  video poster (shown before play, so the
-                            preview doesn't depend on the video's first frame loading)
-art-*.jpg                   gallery artwork
-favicon.ico / *.png         site icons
+```text
+index.html                  Single-file core architecture (HTML + CSS + JS inline)
+kala-headshot.jpg           Hero professional headshot
+kala-highlights.mp4         Projects and product highlight reel video
+kala-highlights-poster.jpg  Optimized video poster frame
+art-*.jpg                   Interactive gallery artwork assets
+favicon.ico / *.png         Site icons
 ```
 
 ## Local preview

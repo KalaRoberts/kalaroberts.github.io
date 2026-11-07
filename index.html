@@ -330,8 +330,8 @@
       border: 1px solid #0c0d10;
     }
     @media (max-width: 760px) {
-      .gallery-wall { flex-wrap: wrap; gap: 26px; padding: 40px 18px; }
-      .art-piece { flex: 1 1 100%; max-width: 420px; }
+      .gallery-wall { flex-wrap: wrap; gap: 30px; padding: 36px 16px; }
+      .art-piece { flex: 1 1 100%; max-width: 340px; }
     }
 
     /* each frame sizes to its own artwork (uncropped) */
@@ -347,7 +347,7 @@
       margin: 0;
       position: relative;
       width: 100%;
-      padding: 18px;              /* the gold/silver moulding thickness */
+      padding: 6%;                /* the gold/silver moulding thickness (scales with frame) */
       border-radius: 4px;
       /* braided metallic moulding, light from top-left */
       background:
@@ -378,15 +378,18 @@
     }
 
     /* cream mat with a thin dark inner bevel, like the sample */
-    .frame img {
+    .frame .mat {
+      /* cream mat — padding is a % of frame width, so it scales proportionally */
+      background: #efe9da;
+      padding: 7%;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
+    }
+    .frame .mat img {
       display: block;
       width: 100%;
       height: auto;               /* uncropped — natural aspect ratio */
-      border: 20px solid #efe9da; /* cream mat */
-      outline: 1px solid rgba(0,0,0,0.35);
-      outline-offset: -21px;      /* thin dark line at mat's inner edge */
+      outline: 1px solid rgba(0,0,0,0.3);  /* thin dark bevel at art's edge */
       background: #efe9da;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.25);
     }
 
     /* clickable art buttons */
@@ -662,10 +665,10 @@
             <span class="dates">Nov 2024 – Present</span>
           </div>
           <ul>
-            <li>Direct global product strategy, platform architecture, and multi-year roadmaps for Amazon’s global distribution platform across 50 marketplaces and 150+ telecom and enterprise partners, growing revenue by 35% YoY.</li>
-            <li>Define distribution strategies, regional plan tiers, and commercial deal constructs to bundle subscriptions (Prime, Prime Video, Audible, etc.) through partner service plans.</li>
+            <li>Lead end-to-end product strategy and multi-year roadmaps for intelligent targeting, tiered pricing models, service expansion, flexible monetization, and distribution through 150+ telecom partners across 50+ marketplaces.</li>
+            <li>Shape global distribution frameworks and conduct market research for opportunity sizing across multiple digital services, establishing incremental acquisition pipelines in high-penetration locales.</li>
+            <li>Own retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.</li>
             <li>Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Customer Insights, and Partner Analytics within 6 months, driving a 25% increase in efficiency.</li>
-            <li>Own Amazon’s retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.</li>
           </ul>
         </div>
 
@@ -810,17 +813,17 @@
       <div class="gallery-wall">
         <button type="button" class="art-piece" onclick="openArt(this)" data-title="My version of Starry Night" data-desc="I’ve always been drawn to Starry Night — the way Van Gogh turned a quiet night into something that comes alive — so I tried to recreate it. What I loved most about this painting was letting go of perfection. Not replicating a scene, but going with the flow." data-src="art-starry-night.jpg">
           <div class="frame">
-            <img loading="lazy" decoding="async" width="834" height="648" src="art-starry-night.jpg" alt="Acrylic painting — a Starry Night interpretation with swirling sky and cypress tree" />
+            <div class="mat"><img loading="lazy" decoding="async" width="834" height="648" src="art-starry-night.jpg" alt="Acrylic painting — a Starry Night interpretation with swirling sky and cypress tree" /></div>
           </div>
         </button>
         <button type="button" class="art-piece" onclick="openArt(this)" data-title="Owning the Night" data-desc="I painted these women as pure color and posture. Strip away the details and what’s left is friendship and confidence." data-src="art-three-women.jpg">
           <div class="frame">
-            <img loading="lazy" decoding="async" width="564" height="664" src="art-three-women.jpg" alt="Acrylic painting — three women in red, orange, and yellow gowns on a starry night" />
+            <div class="mat"><img loading="lazy" decoding="async" width="564" height="664" src="art-three-women.jpg" alt="Acrylic painting — three women in red, orange, and yellow gowns on a starry night" /></div>
           </div>
         </button>
         <button type="button" class="art-piece" onclick="openArt(this)" data-title="Autumn Geese" data-desc="I enjoy hiking in all seasons, but especially fall. It’s the perfect weather here on the east coast, the surroundings are vibrant with color, and if you hike early enough it’s peaceful — the stillness only broken by surrounding wildlife. I painted this to remind me of the serenity I find in nature." data-src="art-autumn-lake.jpg">
           <div class="frame">
-            <img loading="lazy" decoding="async" width="1003" height="799" src="art-autumn-lake.jpg" alt="Acrylic painting — autumn trees and Canada geese reflected in a still lake" />
+            <div class="mat"><img loading="lazy" decoding="async" width="1003" height="799" src="art-autumn-lake.jpg" alt="Acrylic painting — autumn trees and Canada geese reflected in a still lake" /></div>
           </div>
         </button>
       </div>
