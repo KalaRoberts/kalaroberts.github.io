@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kala Roberts — Product Leader, Builder, Creator</title>
+  <meta name="google-site-verification" content="oceDgnUsRqU3GfoktyPGlEDbSneezcl-sLKOEzwvT9Y" />
+  <title>Kala Roberts — Product Leader</title>
   <!-- Google tag (gtm.js) -->
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N496CKG9"></script>
   <script>
@@ -19,12 +20,12 @@
   <meta name="theme-color" content="#0d0b08" />
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kala Roberts — Principal Product Leader" />
+  <meta property="og:title" content="Kala Roberts — Product Leader" />
   <meta property="og:description" content="Product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter." />
   <meta property="og:image" content="kala-headshot.jpg" />
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kala Roberts — Principal Product Leader" />
+  <meta name="twitter:title" content="Kala Roberts — Product Leader" />
   <meta name="twitter:description" content="Product leader with 17 years of experience turning ambiguity into clarity and delivering products that matter." />
   <meta name="twitter:image" content="kala-headshot.jpg" />
   <style>
@@ -69,7 +70,7 @@
     }
 
     /* Translucent cards get a blur so the animation shows through subtly */
-    .about-card, .job, .chip, .video-frame, .art-placeholder {
+    .about-card, .job, .chip, .video-frame {
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -203,16 +204,17 @@
     }
 
     .hero-photo {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+      width: 240px;
+      height: 300px;                 /* taller frame matches the portrait photo's shape */
+      border-radius: 20px;           /* rounded rectangle instead of a tight circle */
       object-fit: cover;
+      object-position: center top;   /* keep head + shoulders in view */
       border: 5px solid var(--card);
       box-shadow: var(--shadow);
       justify-self: center;
     }
     @media (max-width: 720px) {
-      .hero-photo { width: 168px; height: 168px; order: -1; }
+      .hero-photo { width: 180px; height: 225px; order: -1; }
     }
 
     .btn-row {
@@ -334,33 +336,6 @@
     .caption { margin: 16px 0 0; font-size: 0.95rem; color: var(--muted); }
 
     /* Art placeholder */
-    .art-placeholder {
-      border: 2px dashed var(--border);
-      border-radius: 18px;
-      padding: 56px 32px;
-      text-align: center;
-      background: var(--card);
-    }
-    .art-placeholder .emoji { font-size: 2.4rem; display: block; margin-bottom: 12px; }
-    .art-placeholder h3 { margin: 0 0 8px; font-size: 1.25rem; }
-    .art-placeholder p { margin: 0 auto; color: var(--muted); max-width: 46ch; }
-    .art-thumbs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 28px;
-    }
-    .art-thumbs .thumb {
-      aspect-ratio: 4 / 3;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent-soft), var(--border));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 0.82rem;
-      border: 1px solid var(--border);
-    }
 
     /* Art Gallery — framed like the sample */
     .gallery-wall {
@@ -620,32 +595,23 @@
     }
 
     /* Contact */
-    .contact-card {
-      background: linear-gradient(135deg, var(--accent), #c7441d);
-      border-radius: 20px;
-      padding: 48px 36px;
-      text-align: center;
-      color: #fff;
-    }
-    .contact-card h2 { margin: 0 0 12px; font-size: 1.9rem; }
-    .contact-card p { margin: 0 0 24px; opacity: 0.92; font-size: 1.05rem; }
-    .contact-card .btn {
-      background: #fff;
-      color: var(--accent);
-      border-color: #fff;
-    }
-    .contact-card .btn.ghost {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,0.6);
-    }
-
-    footer {
+footer {
       padding: 40px 0 72px;
       color: var(--muted);
       font-size: 0.9rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
     }
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .footer-link:hover { color: var(--accent); transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -662,7 +628,6 @@
         <a href="#projects">Projects</a>
         <a href="#recommendations">Recommendations</a>
         <a href="#art">Hobbies</a>
-        <a href="#contact">Contact</a>
       </nav>
     </div>
   </div>
@@ -686,7 +651,9 @@
       </div>
       <div class="about-card">
         <p>
-          I’m a leader with 17 years of experience steering product strategies that
+          I have 17 years of experience across multiple Amazon divisions
+          including Retail Finance, Multi-Channel Fulfillment, AWS, Digital &amp;
+          Devices, and 3P partnerships. I specialize in delivering products that
           align customer satisfaction with top-line growth. Throughout my
           career, I’ve learned that bringing people together always results in
           the best, most innovative solutions. Whether white boarding ideas
@@ -719,7 +686,7 @@
             <li>Lead end-to-end product strategy and multi-year roadmaps for intelligent targeting, tiered pricing models, service expansion, flexible monetization, and distribution through 150+ telecom partners across 50+ marketplaces.</li>
             <li>Shape global distribution frameworks and conduct market research for opportunity sizing across multiple digital services, establishing incremental acquisition pipelines in high-penetration locales.</li>
             <li>Own retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.</li>
-            <li>Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Customer Insights, and Partner Analytics within 6 months, driving a 25% increase in efficiency.</li>
+            <li>Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Business Development, and Partner Analytics within 6 months, driving a 25% increase in efficiency.</li>
           </ul>
         </div>
 
@@ -880,17 +847,7 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <div class="contact-card">
-        <h2>Let’s connect</h2>
-        <p>Always open to connecting with fellow product leaders and tech innovators.</p>
-        <div class="btn-row" style="justify-content:center;">
-          <a class="btn" href="https://linkedin.com/in/kalaroberts" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </div>
+    </div>
 
   <!-- Art lightbox -->
   <div class="lightbox" id="artLightbox" onclick="if(event.target===this)closeArt()">
@@ -907,7 +864,12 @@
   </div>
 
   <footer>
-    © <span id="year"></span> Kala Roberts
+    <span class="footer-copy">© <span id="year"></span> Kala Roberts</span>
+    <a class="footer-link" href="https://linkedin.com/in/kalaroberts" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+      </svg>
+    </a>
   </footer>
 
   <script>

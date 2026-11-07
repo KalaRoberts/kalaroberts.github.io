@@ -15,7 +15,6 @@ A clean, one-page site featuring:
 - **Projects** — Highlight reel of large-scale initiatives
 - **Recommendations** — Endorsements from colleagues
 - **Hobbies** — List of hobbies including an interactive personal art gallery
-- **Contact** — Directs to LinkedIn Profile
 
 ## Technical Architecture & Built With
 
@@ -23,6 +22,7 @@ A clean, one-page site featuring:
 - **Visuals:** Custom animated particle-network background via HTML canvas
 - **Performance:** Fully responsive design, dark theme support, reduced-motion compliance, and optimized media assets
 - **Analytics:** Integrated via Google Tag Manager (`GTM-N496CKG9`)
+- **SEO & Search:** Open Graph / social preview tags, descriptive meta tags, and Google Search Console verification for indexing
 
 ## Repository Structure
 
