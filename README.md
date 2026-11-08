@@ -1,10 +1,10 @@
 # Kala Roberts — Portfolio & Professional Site
 
-A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pages, showcasing 17+ years of technical product leadership.
+A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pages.
 
 🔗 **Live site:** https://kalaroberts.github.io  
 🔗 **LinkedIn:** [My LinkedIn Profile](https://linkedin.com/in/kalaroberts)  
-🔗 **Featured Article:** [Lessons Learned Working at Amazon](https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/)
+🔗 **Article:** [Lessons Learned Working at Amazon](https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/)
 
 ## Overview
 
@@ -13,7 +13,7 @@ A clean, one-page site featuring:
 - **Intro** — Professional summary and leadership philosophy, alongside a headshot
 - **Career Highlights** — A scannable 2x2 grid of core areas of focus
 - **Experience** — 17 years of product strategy across multiple Amazon teams
-- **Projects** — Highlight reel of large-scale initiatives
+- **Projects** — Highlight reel of publicly released projects I’ve worked on
 - **Recommendations** — Endorsements from colleagues
 - **Hobbies** — List of hobbies including an interactive personal art gallery
 

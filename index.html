@@ -212,13 +212,6 @@
       color: var(--fg);
       margin: 0 0 16px;
     }
-    .hero-text .hero-article {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin: 0;
-    }
-    .hero-text .hero-article a { color: var(--accent); font-weight: 600; text-decoration: none; }
-    .hero-text .hero-article a:hover { text-decoration: underline; }
     @media (max-width: 720px) {
       .hero-text p { margin-left: auto; margin-right: auto; }
     }
@@ -584,6 +577,15 @@
       color: var(--fg);
     }
     .expertise-card li:last-child { margin-bottom: 0; }
+    .highlights-reflection {
+      margin: 22px 0 0;
+      font-size: 0.97rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .highlights-reflection strong { color: var(--accent); }
+    .highlights-reflection a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .highlights-reflection a:hover { text-decoration: underline; }
 
     /* Recommendations */
     .recs {
@@ -725,10 +727,6 @@ footer {
           business leaders, I thrive on turning ambiguity into clarity and
           delivering products that matter.
         </p>
-        <p class="hero-article">
-          Learn more about some of my perspectives:
-          <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned →</a>
-        </p>
       </div>
       <img class="hero-photo" src="kala-headshot.jpg" alt="Kala Roberts" />
     </header>
@@ -773,6 +771,10 @@ footer {
           </ul>
         </div>
       </div>
+      <p class="highlights-reflection">
+        For a deeper look into my approach to navigating ambiguity, scaling global products, and driving high-velocity decision-making, read my article:
+        <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned Working at Amazon &rarr;</a>
+      </p>
     </section>
 
     <!-- Experience -->
@@ -901,7 +903,7 @@ footer {
           <a href="kala-highlights.mp4">Download the video</a> instead.
         </video>
       </div>
-      <p class="caption">Some highlights of publicly released projects I’ve worked on.</p>
+      <p class="caption">Highlight reel of publicly released projects I’ve worked on.</p>
     </section>
 
     <!-- Recommendations -->
