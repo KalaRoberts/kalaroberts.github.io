@@ -23,7 +23,7 @@ A clean, one-page site featuring:
 - **Visuals:** Custom animated particle-network background via HTML canvas
 - **Performance:** Fully responsive design, dark theme support, reduced-motion compliance, and optimized media assets
 - **Analytics:** Integrated via Google Tag Manager (`GTM-N496CKG9`)
-- **SEO & Search:** Semantic HTML landmarks (`<main>`, single `<h1>`, clean heading hierarchy), canonical URL, descriptive meta tags, Open Graph / social preview tags, JSON-LD `Person` structured data, a `sitemap.xml` + `robots.txt`, and Google Search Console verification for indexing
+- **SEO & Search:** Semantic HTML landmarks (`<main>`, single `<h1>`, clean heading hierarchy), canonical URL, descriptive meta tags, Open Graph / social preview tags (with large image-preview hints for rich search thumbnails), JSON-LD `Person` structured data, a `sitemap.xml` + `robots.txt`, and Google Search Console verification for indexing
 
 ## Repository Structure
 
