@@ -6,7 +6,7 @@ This is the personal portfolio and professional site of Kala Roberts, a single-p
 
 ## About
 
-Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. She thrives on turning ambiguity into clarity, bringing people together across engineering teams and business leadership to deliver products that matter.
+Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. Throughout her career, she has learned that bringing people together results in the best, most innovative solutions — whether white boarding ideas across engineering teams or aligning strategic priorities with business leaders. She thrives on turning ambiguity into clarity and delivering products that matter. Beyond product management, she enjoys building web platforms — handling everything from front-end design to DNS mapping and deployment infrastructure.
 
 ## Career Highlights
 
@@ -33,6 +33,7 @@ Over 17 years at Amazon, Kala Roberts has driven product and tech strategy acros
 
 ## Also includes
 
-- Projects: a highlight reel video of publicly released projects
+- Projects & Ventures: Power Capital website & deployment architecture (powercapital.cloud), plus partner case-study spotlights — a telecom broadband provider offering Prime to low-income internet customers, an AWS enterprise partner sales-enablement case study, and a merchant/seller impact testimonial for warehouse management SaaS
+- Perspectives: the article "Lessons Learned Working at Amazon" and an embedded Amazon project highlights reel (video)
 - Hobbies: hiking, sailing, horseback riding, cooking recipes from around the world, and acrylic painting (an interactive art gallery)
 - Recommendations: endorsements from colleagues

@@ -6,7 +6,7 @@ This is the full-content version of the personal portfolio and professional site
 
 ## About
 
-Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. Throughout her career, she has learned that bringing people together results in the best, most innovative solutions. Whether white boarding ideas across engineering teams or aligning strategic priorities with business leaders, she thrives on turning ambiguity into clarity and delivering products that matter.
+Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. Throughout her career, she has learned that bringing people together results in the best, most innovative solutions — whether white boarding ideas across engineering teams or aligning strategic priorities with business leaders. She thrives on turning ambiguity into clarity and delivering products that matter. Beyond product management, she enjoys building web platforms — handling everything from front-end design to DNS mapping and deployment infrastructure.
 
 ## Career Highlights
 
@@ -31,6 +31,13 @@ Over 17 years at Amazon, Kala Roberts has driven product and tech strategy acros
 - Business to Business & Business to Customer & B2B2C
 
 For a deeper look into her approach to navigating ambiguity, scaling global products, and driving high-velocity decision-making, see her article "Lessons Learned Working at Amazon": https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/
+
+## Projects & Ventures
+
+- Power Capital Website & Deployment Architecture: Designed, developed, and launched Powercapital.cloud. Managed end-to-end technical execution including domain procurement, DNS mapping to GitHub Pages, responsive UI, and integrated headless contact form processing. (https://powercapital.cloud)
+- Telecommunications Partner Spotlight: Prime Distribution — An announcement from a major broadband provider detailing a partnership where Kala played a key role in bundling Prime for qualifying low-income internet subscribers. (links to the provider's announcement)
+- AWS Enterprise Partner Case Study: Sales Enablement — An AWS enterprise partner outlines partnering with Kala's team to reduce customer data entry from 300 fields down to 30, improve processing time by 40 minutes per customer, and accelerate environment provisioning from weeks to minutes. (video testimonial)
+- Seller Impact Spotlight: Warehouse Management SaaS — A firsthand account from a merchant partner detailing how cloud-native warehouse management SaaS drove 27% higher operating profit and increased capacity to fulfill orders by 2.5X. (video testimonial)
 
 ## Experience
 
@@ -83,6 +90,11 @@ Head of Product Management, Digital Acceleration:
 
 Head of Program Management, Finance Technology:
 "It's rare to find standout talent like Kala. I had the pleasure of having Kala report to me for three years at Amazon. She is reliable and solid. Her ability to juggle multiple projects while at the same time taking them to the next level was unlike any I've seen before. I was particularly impressed by Kala's ability to learn complex subjects and systems quickly, proceed to formulate a vision, and work closely with partner teams to deliver strong results. Kala is someone I admire professionally and personally. I was very sad to see her leave my team, but at the same time, I was excited for her. As a colleague or leader, I am confident that Kala would be an asset to any team."
+
+## Perspectives
+
+- Writing & Reflections: An article on how Kala has scaled at Amazon over the years — a deeper look into navigating ambiguity, scaling global products, and driving high-velocity decision-making. "Lessons Learned Working at Amazon" (https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/)
+- Amazon Project Highlights: A highlight reel of publicly released projects Kala has worked on at Amazon — from acquisitions and new country launches to content releases and tools supporting small business growth and AWS partner networks. (embedded video, opened in a modal)
 
 ## Hobbies
 

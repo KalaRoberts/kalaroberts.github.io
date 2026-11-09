@@ -11,34 +11,40 @@ A responsive, zero-dependency single-page personal portfolio hosted on GitHub Pa
 A clean, one-page site featuring:
 
 - **Intro** — Professional summary and leadership philosophy, alongside a headshot
-- **Career Highlights** — A scannable 2x2 grid of core areas of focus
-- **Experience** — 17 years of product strategy across multiple Amazon teams
-- **Projects** — A highlight reel of publicly released projects
+- **Career Highlights** — A scannable 2×2 grid of core areas of focus
+- **Projects & Ventures** — Launched work and partner case studies, each a banner/modal card: a built-and-deployed web platform, plus telecom, AWS, and seller partnership spotlights linking to announcements and testimonials
+- **Experience** — 17 years of product strategy across multiple Amazon teams, with expandable role details
 - **Recommendations** — Endorsements from colleagues
+- **Perspectives** — A written article and an embedded highlight-reel video (opened in a modal)
 - **Hobbies** — Personal interests, including an interactive art gallery
 
 ## Technical Architecture & Built With
 
 - **Core:** Pure HTML5, CSS3, and vanilla JavaScript — zero build steps, frameworks, or external dependencies
 - **Visuals:** Custom animated particle-network background via HTML canvas
-- **Accessibility:** Semantic HTML landmarks, `aria-label`s on icon links, a `role="dialog"` lightbox, `prefers-reduced-motion` compliance, and descriptive `alt` text throughout
-- **Performance:** Fully responsive design, dark-theme support, lazy-loaded imagery, and optimized media assets
+- **Accessibility:** Semantic HTML landmarks, keyboard-focusable cards with visible focus rings, `aria-label`s on icon links and modals, native `<dialog>` modals (video reel, testimonials, and art lightbox) and `<details>`/`<summary>` collapsible cards, `prefers-reduced-motion` compliance, and descriptive `alt` text throughout
+- **Performance:** Fully responsive (mobile-first) design, dark theme, lazy-loaded imagery, on-demand video loading, and optimized media assets
 - **Analytics:** Integrated via Google Tag Manager
 - **SEO & Search:** Semantic HTML landmarks (`<main>`, single `<h1>`, clean heading hierarchy), canonical URL, descriptive meta tags, Open Graph / social preview tags (with large image-preview hints for rich search thumbnails), JSON-LD `Person` structured data, a `sitemap.xml` + `robots.txt`, `llms.txt` + `llms-full.txt` summaries for AI crawlers, and Google Search Console verification for indexing
 
 ## Repository Structure
 
 ```text
-index.html                  Single-file core architecture (HTML + CSS + JS inline)
-kala-headshot.jpg           Hero professional headshot
-kala-highlights.mp4         Projects and product highlight reel video
-kala-highlights-poster.jpg  Optimized video poster frame
-art-*.jpg                   Interactive gallery artwork assets
-favicon.ico / *.png         Site icons
-sitemap.xml                 Sitemap for search engine discovery
-robots.txt                  Crawler directives (allows all, points to sitemap)
-llms.txt                    Structured site summary for AI crawlers / LLMs
-llms-full.txt               Expanded full-content version for AI crawlers / LLMs
+index.html                       Single-file core architecture (HTML + CSS + JS inline)
+kala-headshot.jpg                Hero professional headshot
+kala-highlights.mp4              Amazon project highlights reel (opens in a modal)
+kala-highlights-poster.jpg       Poster frame for the reel video player
+kala-highlights-thumb.jpg        Banner thumbnail for the highlights reel card
+leadership-principles-thumb.jpg  Banner thumbnail for the Writing & Reflections card
+aws-testimonial-thumb.jpg        Thumbnail for the AWS partner case-study modal
+seller-testimonial-thumb.jpg     Thumbnail for the seller impact testimonial modal
+telecom-partner-thumb.jpg        Thumbnail for the telecom partner announcement modal
+art-*.jpg                        Interactive gallery artwork assets
+favicon.ico / *.png              Site icons
+sitemap.xml                      Sitemap for search engine discovery
+robots.txt                       Crawler directives (allows all, points to sitemap)
+llms.txt                         Structured site summary for AI crawlers / LLMs
+llms-full.txt                    Expanded full-content version for AI crawlers / LLMs
 ```
 
 ## Local Preview

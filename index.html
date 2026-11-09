@@ -75,7 +75,7 @@
     }
 
     /* Translucent cards get a blur so the animation shows through subtly */
-    .about-card, .job, .chip, .video-frame {
+    .about-card, .job, .chip {
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -265,6 +265,60 @@
 
     /* Sections */
     section { padding: 64px 0; }
+
+    /* Chevron indicator (shared) */
+    .acc-chevron {
+      flex: none;
+      width: 11px;
+      height: 11px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      transition: transform 0.25s ease, border-color 0.15s ease;
+      margin-top: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) { .acc-chevron { transition: none; } }
+
+    /* Collapsible cards — title/subtitle visible, bullets hidden by default */
+    details.card-collapse { }
+    details.card-collapse > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      outline: none;
+    }
+    details.card-collapse > summary::-webkit-details-marker { display: none; }
+    details.card-collapse > summary:focus-visible {
+      box-shadow: 0 0 0 2px var(--accent);
+      border-radius: 10px;
+    }
+    /* Expertise card: the <h3> is the clickable title */
+    details.expertise-card > summary h3 { margin: 0; }
+    details.expertise-card[open] > summary h3 { margin-bottom: 0; }
+    details.expertise-card > summary:hover h3,
+    details.expertise-card > summary:hover .acc-chevron { color: var(--accent); border-color: var(--accent); }
+    details.expertise-card > ul { margin-top: 14px; }
+    /* Job card: the job-head (role/company/dates) is the clickable title area */
+    details.job > summary { align-items: baseline; }
+    details.job > summary .job-head { flex: 1; }
+    details.job > summary:hover h3 { color: var(--accent); }
+    details.job > summary:hover .acc-chevron { border-color: var(--accent); }
+    /* chevron rotates open */
+    details.card-collapse[open] > summary .acc-chevron { transform: rotate(-135deg); }
+    /* bullets reveal animation */
+    details.card-collapse[open] > ul { animation: acc-reveal 0.25s ease; }
+    @keyframes acc-reveal {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      details.card-collapse[open] > ul { animation: none; }
+    }
+
+    }
     .section-head {
       margin: 0 0 36px;
     }
@@ -342,15 +396,6 @@
     }
 
     /* Projects: video */
-    .video-frame {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: var(--shadow);
-    }
-    .video-frame video { display: block; width: 100%; height: auto; }
-    .caption { margin: 16px 0 0; font-size: 0.95rem; color: var(--muted); }
 
     /* Art placeholder */
 
@@ -581,15 +626,168 @@
       color: var(--fg);
     }
     .expertise-card li:last-child { margin-bottom: 0; }
-    .highlights-reflection {
-      margin: 22px 0 0;
-      font-size: 0.97rem;
-      line-height: 1.55;
-      color: var(--muted);
+
+    /* Projects — Power Capital card */
+    .project-card {
+      display: block;
+      margin-top: 28px;
+      padding: 24px 26px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, border-color 0.15s ease;
     }
-    .highlights-reflection strong { color: var(--accent); }
-    .highlights-reflection a { color: var(--accent); font-weight: 600; text-decoration: none; }
-    .highlights-reflection a:hover { text-decoration: underline; }
+    .project-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .project-card:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--accent); border-color: var(--accent); }
+    /* Reel card: button reset + thumbnail with play overlay */
+    button.reel-card {
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+    button.reel-card:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--accent);
+      border-color: var(--accent);
+    }
+    .reel-thumb {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #000;
+      height: 160px;          /* compact banner — less vertical space */
+    }
+    @media (max-width: 600px) { .reel-thumb { height: 130px; } }
+    .reel-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    button.reel-card:hover .reel-thumb img { transform: scale(1.03); opacity: 0.9; }
+    .reel-play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: rgba(13,11,8,0.55);
+      border: 2px solid rgba(255,255,255,0.9);
+      backdrop-filter: blur(2px);
+    }
+    .reel-play::before {
+      content: "";
+      position: absolute;
+      top: 50%; left: 54%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 10px 0 10px 17px;
+      border-color: transparent transparent transparent #fff;
+    }
+    button.reel-card:hover .reel-play { background: var(--accent); border-color: #fff; }
+
+    /* Native dialog modal for the reel */
+    .reel-dialog {
+      border: none;
+      padding: 0;
+      background: transparent;
+      max-width: min(92vw, 960px);
+      width: 100%;
+    }
+    .reel-dialog::backdrop {
+      background: rgba(8,8,10,0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .reel-dialog video {
+      display: block;
+      width: 100%;
+      max-height: 80vh;
+      border-radius: 14px;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.7);
+      background: #000;
+    }
+    .seller-thumb {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.7);
+      background: #000;
+      text-decoration: none;
+    }
+    .seller-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .seller-thumb:hover img { transform: scale(1.03); opacity: 0.9; }
+    .seller-thumb .reel-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 66px; height: 66px; border-radius: 50%;
+      background: rgba(13,11,8,0.55); border: 2px solid rgba(255,255,255,0.9);
+    }
+    .seller-thumb .reel-play::before {
+      content: ""; position: absolute; top: 50%; left: 54%;
+      transform: translate(-50%, -50%);
+      border-style: solid; border-width: 13px 0 13px 21px;
+      border-color: transparent transparent transparent #fff;
+    }
+    .seller-thumb:hover .reel-play { background: var(--accent); border-color: #fff; }
+    .seller-thumb-cta {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 28px 18px 14px;
+      font-size: 0.95rem; font-weight: 600; color: #fff;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      text-align: center;
+    }
+    .seller-caption {
+      margin: 16px auto 0;
+      max-width: 680px;
+      text-align: center;
+      color: #d8d3c8;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+    .reel-close {
+      position: fixed;
+      top: 22px; right: 26px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .reel-close:hover { background: rgba(255,255,255,0.18); transform: scale(1.05); }
+    @media (max-width: 600px) {
+      .reel-dialog { max-width: 96vw; }
+      .reel-dialog video { max-height: 70vh; border-radius: 10px; }
+      .reel-close { top: 12px; right: 12px; width: 40px; height: 40px; font-size: 1.25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reel-thumb img, .reel-close { transition: none; }
+      button.reel-card:hover .reel-thumb img { transform: none; }
+    }
+    .project-card h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .project-card p { margin: 0 0 14px; font-size: 0.96rem; line-height: 1.55; color: var(--fg); }
+    .project-card .project-link { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+    .project-card:hover .project-link { text-decoration: underline; }
 
     /* Recommendations */
     .recs {
@@ -707,9 +905,10 @@ footer {
       </button>
       <nav id="siteNav" onclick="closeNav()">
         <a href="#expertise">Career Highlights</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#recommendations">Recommendations</a>
+        <a href="#perspectives">Perspectives</a>
         <a href="#art">Hobbies</a>
       </nav>
     </div>
@@ -723,13 +922,15 @@ footer {
         <p class="hero-bio">
           Over 17 years at Amazon, I have driven product and tech strategy
           across multiple business units including Retail Finance, Multi-Channel
-          Fulfillment, AWS, Digital &amp; Devices, and 3P partner distribution. I specialize in delivering products that
-          align customer satisfaction with top-line growth. Throughout my
-          career, I’ve learned that bringing people together results in
-          the best, most innovative solutions. Whether white boarding ideas
-          across engineering teams or aligning strategic priorities with
-          business leaders, I thrive on turning ambiguity into clarity and
-          delivering products that matter.
+          Fulfillment, AWS, Digital &amp; Devices, and 3P partner distribution. I
+          specialize in delivering products that align customer satisfaction with
+          top-line growth. Throughout my career, I’ve learned that bringing people
+          together results in the best, most innovative solutions — whether white
+          boarding ideas across engineering teams or aligning strategic priorities
+          with business leaders. I thrive on turning ambiguity into clarity and
+          delivering products that matter. Beyond product management, I
+          enjoy building web platforms — handling everything from
+          front-end design to DNS mapping and deployment infrastructure.
         </p>
       </div>
       <img class="hero-photo" src="kala-headshot.jpg" alt="Kala Roberts" />
@@ -775,10 +976,33 @@ footer {
           </ul>
         </div>
       </div>
-      <p class="highlights-reflection">
-        For a deeper look into my approach to navigating ambiguity, scaling global products, and driving high-velocity decision-making, read my article:
-        <a href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">Lessons Learned Working at Amazon &rarr;</a>
-      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Projects &amp; Ventures</h2>
+      </div>
+      <a class="project-card" href="https://powercapital.cloud" target="_blank" rel="noopener">
+        <h3>Power Capital Website &amp; Deployment Architecture</h3>
+        <p>Designed, developed, and launched Powercapital.cloud. Managed end-to-end technical execution including domain procurement, DNS mapping to GitHub Pages, responsive UI, and integrated headless contact form processing.</p>
+        <span class="project-link">View live site &rarr;</span>
+      </a>
+      <button type="button" class="project-card reel-card" onclick="openTelecomModal()">
+        <h3>Telecommunications Partner Spotlight: Prime Distribution</h3>
+        <p>See the announcement from a major broadband provider detailing our partnership, where I played a key role in bundling Prime for qualifying low-income internet subscribers.</p>
+        <span class="project-link">Read the announcement &rarr;</span>
+      </button>
+      <button type="button" class="project-card reel-card" onclick="openAwsModal()">
+        <h3>AWS Enterprise Partner Case Study: Sales Enablement</h3>
+        <p>Watch an AWS partner outline partnering with my team to reduce customer data entry from 300 fields down to 30, improve processing time by 40 minutes per customer, and accelerate environment provisioning from weeks to minutes.</p>
+        <span class="project-link">Watch the partner case study &rarr;</span>
+      </button>
+      <button type="button" class="project-card reel-card" onclick="openSellerModal()">
+        <h3>Seller Impact Spotlight: Warehouse Management SaaS</h3>
+        <p>A firsthand account from one of my merchant partners detailing how our cloud-native warehouse management Software as a Service (SaaS) drove 27% higher operating profit and increased capacity to fulfill orders by 2.5X.</p>
+        <span class="project-link">Watch the seller testimonial &rarr;</span>
+      </button>
     </section>
 
     <!-- Experience -->
@@ -787,127 +1011,111 @@ footer {
         <h2>Experience</h2>
       </div>
       <div class="exp">
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Principal Product Manager – Tech, Amazon Fuse</h3>
               <p class="company">Amazon.com · Raleigh, NC (Remote)</p>
             </div>
             <span class="dates">Nov 2024 – Present</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Lead end-to-end product strategy and multi-year roadmaps for intelligent targeting, tiered pricing models, service expansion, flexible monetization, and distribution through 150+ telecom partners across 50+ marketplaces.</li>
             <li>Shape global distribution frameworks and conduct market research for opportunity sizing across multiple digital services, establishing incremental acquisition pipelines in high-penetration locales.</li>
             <li>Own retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.</li>
             <li>Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Business Development, and Partner Analytics within 6 months, driving a 25% increase in efficiency.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Principal Product Manager – Tech, Digital Acceleration</h3>
               <p class="company">Amazon.com · Arlington, VA (Hybrid)</p>
             </div>
             <span class="dates">Sep 2023 – Nov 2024</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Single-Threaded Leader for Device and Subscription Bundling, governing the product vision and platform roadmap across 12 cross-functional engineering teams, driving a multi-billion increase in operating profit YoY.</li>
             <li>Led content distribution architecture across 6 hardware device families (Echo, Fire TV, Tablet, Ring Cam, etc.) and 16 digital subscriptions (Kindle Unlimited, Audible, etc.).</li>
             <li>Reduced partner onboarding and testing effort from 14 to 8 weeks via automated test case generation, self-service ingestion, and standardized technical specifications.</li>
             <li>Designed a lifecycle entitlement and incentive engine, orchestrating automated customer journeys that incentivized over 1B high value user actions.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Sr. Product Manager – Tech, Digital Acceleration</h3>
               <p class="company">Amazon.com · Arlington, VA (Hybrid)</p>
             </div>
             <span class="dates">Jul 2021 – Sep 2023</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Architected and scaled a multi-tenant customer engagement platform featuring configurable event-driven integration layers, enabling all clients to use custom event triggers and automate real-time customer journeys.</li>
             <li>Established a shift in platform metrics from raw open/click rates to High-Value Action (HVA) lifecycle tracking (streaming, listening, shopping) for downstream monetization.</li>
             <li>Integrated ML models into A/B testing experiment frameworks, expanding marketing reach by 41% YoY while reducing unsubscribe rates from 16.7% to 4.76%.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Sr. Product Manager, Sales Enablement Platforms</h3>
               <p class="company">Amazon Web Services · Arlington, VA (Onsite)</p>
             </div>
             <span class="dates">Jul 2019 – Jul 2021</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Architected a contract lifecycle management platform, consolidating 12+ fragmented tools into an intelligent interface processing 60% of AWS revenue and cutting deal cycle times by 50%.</li>
             <li>Managed, mentored, and developed a team of solution designers and product managers focused on seller enablement, CPQ automation, and quote-to-contract friction reduction.</li>
             <li>Devised executive deal-approval governance frameworks and real-time margin analytics, improving deal profitability visibility for AWS field sales reps and sales operations.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Sr. Product Manager, Fulfillment by Amazon</h3>
               <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
             </div>
             <span class="dates">Jan 2017 – Jul 2019</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Pioneered and launched a cloud-native warehouse management SaaS, converting merchant facilities into Prime fulfillment nodes, generating operating profit 27% higher than benchmark and adding 200k+ new products to Prime selection.</li>
             <li>Owned the strategy for dangerous goods expansion including cross-border controls, adding 170k new catalog products and driving multi-billion dollar projected incremental annualized revenue.</li>
             <li>Automated seller site deployment and configuration, reducing launch lead time from 8 weeks to 2 days across 27 distinct system steps.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Sr. Program Manager, Finance Technology</h3>
               <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
             </div>
             <span class="dates">Nov 2011 – Jan 2017</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Led global finance platform expansion across 13 international marketplaces, establishing automated financial controls that reduced global billing defects by 45%.</li>
             <li>Contributed to the WW Supplier Contract System audit presented to SVP/CFO leadership, remediating critical landed-cost variances and tightening administrative access controls.</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="job">
-          <div class="job-head">
+        <details class="job card-collapse">
+          <summary class="card-summary"><div class="job-head">
             <div>
               <h3>Financial Analyst, Finance Operations</h3>
               <p class="company">Amazon.com · Seattle, WA (Onsite)</p>
             </div>
             <span class="dates">Nov 2009 – Nov 2011</span>
-          </div>
+          </div><span class="acc-chevron" aria-hidden="true"></span></summary>
           <ul>
             <li>Architected vendor returns costing logic and dispute resolution workflows across 6 global marketplaces, accelerating defect resolution times by 44% and increasing quality ratings by 4%.</li>
             <li>Authored functional specifications for self-service vendor applications, streamlining damage claims, packaging defect investigations, and price protection reimbursements.</li>
           </ul>
-        </div>
+        </details>
       </div>
-
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="section-head">
-        <h2>Projects</h2>
-      </div>
-      <div class="video-frame">
-        <video controls preload="metadata" playsinline poster="kala-highlights-poster.jpg">
-          <source src="kala-highlights.mp4" type="video/mp4" />
-          Your browser doesn’t support embedded video.
-          <a href="kala-highlights.mp4">Download the video</a> instead.
-        </video>
-      </div>
-      <p class="caption">Highlight reel of publicly released projects I’ve worked on.</p>
     </section>
 
     <!-- Recommendations -->
@@ -933,6 +1141,30 @@ footer {
           </figcaption>
         </figure>
       </div>
+    </section>
+
+    <!-- Perspectives -->
+    <section id="perspectives">
+      <div class="section-head">
+        <h2>Perspectives</h2>
+      </div>
+      <a class="project-card" href="https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/" target="_blank" rel="noopener">
+        <div class="reel-thumb">
+          <img src="leadership-principles-thumb.jpg" alt="Amazon Leadership Principles — Lessons Learned Working at Amazon" loading="lazy" decoding="async" />
+        </div>
+        <h3>Writing &amp; Reflections</h3>
+        <p>I’ve written about how I’ve scaled at Amazon over the years. For a deeper look into my approach to navigating ambiguity, scaling global products, and driving high-velocity decision-making, read my article.</p>
+        <span class="project-link">Lessons Learned Working at Amazon (My LinkedIn Article) &rarr;</span>
+      </a>
+      <button type="button" class="project-card reel-card" onclick="openReel()">
+        <div class="reel-thumb">
+          <img src="kala-highlights-thumb.jpg" alt="Amazon Project Highlights reel" loading="lazy" decoding="async" />
+          <span class="reel-play" aria-hidden="true"></span>
+        </div>
+        <h3>Amazon Project Highlights</h3>
+        <p>I created a highlight reel of publicly released projects I’ve worked on at Amazon — from acquisitions and new country launches to content releases and tools supporting small business growth and AWS partner networks.</p>
+        <span class="project-link">Watch the reel &rarr;</span>
+      </button>
     </section>
 
     <!-- Art Gallery -->
@@ -963,6 +1195,48 @@ footer {
 
     </div>
 
+  <!-- Highlights reel modal -->
+  <dialog id="reelDialog" class="reel-dialog" aria-label="Amazon Project Highlights video">
+    <button class="reel-close" onclick="closeReel()" aria-label="Close">&times;</button>
+    <video id="reelVideo" controls playsinline preload="none" poster="kala-highlights-poster.jpg">
+      <source src="kala-highlights.mp4" type="video/mp4" />
+      Your browser doesn’t support embedded video.
+      <a href="kala-highlights.mp4">Download the video</a> instead.
+    </video>
+  </dialog>
+
+  <!-- Seller impact testimonial modal -->
+  <dialog id="sellerModal" class="reel-dialog info-dialog" aria-label="Seller impact testimonial">
+    <button class="reel-close" onclick="closeSellerModal()" aria-label="Close">&times;</button>
+    <a class="seller-thumb" href="https://www.youtube.com/watch?v=7GsIu0bZHL0" target="_blank" rel="noopener">
+      <img src="seller-testimonial-thumb.jpg" alt="Seller testimonial — watch on YouTube" />
+      <span class="reel-play" aria-hidden="true"></span>
+      <span class="seller-thumb-cta">Watch on YouTube &rarr;</span>
+    </a>
+    <p class="seller-caption">See how this seller used our software to turn their warehouse into a Prime fulfillment node — streamlining operations, cutting fulfillment friction, and scaling selection.</p>
+  </dialog>
+
+  <!-- AWS partner case study modal -->
+  <dialog id="awsModal" class="reel-dialog info-dialog" aria-label="AWS enterprise partner case study">
+    <button class="reel-close" onclick="closeAwsModal()" aria-label="Close">&times;</button>
+    <a class="seller-thumb" href="https://www.youtube.com/watch?v=Iz5m4vltCk0" target="_blank" rel="noopener">
+      <img src="aws-testimonial-thumb.jpg" alt="AWS partner case study — watch on YouTube" />
+      <span class="reel-play" aria-hidden="true"></span>
+      <span class="seller-thumb-cta">Watch on YouTube &rarr;</span>
+    </a>
+    <p class="seller-caption">Watch the Director of Mobile and Digital at Nationwide discuss how partnering with AWS transformed their business.</p>
+  </dialog>
+
+  <!-- Telecommunications partner announcement modal -->
+  <dialog id="telecomModal" class="reel-dialog info-dialog" aria-label="Telecommunications partner announcement">
+    <button class="reel-close" onclick="closeTelecomModal()" aria-label="Close">&times;</button>
+    <a class="seller-thumb" href="https://corporate.charter.com/spectrum-offers-amazon-prime-low-income-internet-customers" target="_blank" rel="noopener">
+      <img src="telecom-partner-thumb.jpg" alt="Telecommunications partner announcement — read the article" />
+      <span class="seller-thumb-cta">Read the announcement &rarr;</span>
+    </a>
+    <p class="seller-caption">Major US broadband provider offers Prime membership to qualifying low-income internet customers.</p>
+  </dialog>
+
   <!-- Art lightbox -->
   <div class="lightbox" id="artLightbox" role="dialog" aria-modal="true" aria-label="Artwork detail" onclick="if(event.target===this)closeArt()">
     <button class="lightbox-close" onclick="closeArt()" aria-label="Close">&times;</button>
@@ -990,6 +1264,84 @@ footer {
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Highlights reel dialog
+    function openReel() {
+      var d = document.getElementById("reelDialog");
+      if (typeof d.showModal === "function") { d.showModal(); }
+      else { d.setAttribute("open", ""); }   // fallback
+    }
+    function closeReel() {
+      var d = document.getElementById("reelDialog");
+      var v = document.getElementById("reelVideo");
+      if (v) { v.pause(); }
+      if (typeof d.close === "function") { d.close(); }
+      else { d.removeAttribute("open"); }
+    }
+    (function () {
+      var d = document.getElementById("reelDialog");
+      if (!d) return;
+      // Click on the backdrop (outside the video) closes
+      d.addEventListener("click", function (e) {
+        if (e.target === d) closeReel();
+      });
+      // Pause video when closed via Esc
+      d.addEventListener("close", function () {
+        var v = document.getElementById("reelVideo");
+        if (v) v.pause();
+      });
+    })();
+
+    // Seller testimonial dialog
+    function openSellerModal() {
+      var d = document.getElementById("sellerModal");
+      if (typeof d.showModal === "function") { d.showModal(); }
+      else { d.setAttribute("open", ""); }
+    }
+    function closeSellerModal() {
+      var d = document.getElementById("sellerModal");
+      if (typeof d.close === "function") { d.close(); }
+      else { d.removeAttribute("open"); }
+    }
+    (function () {
+      var d = document.getElementById("sellerModal");
+      if (!d) return;
+      d.addEventListener("click", function (e) { if (e.target === d) closeSellerModal(); });
+    })();
+
+    // AWS partner case study dialog
+    function openAwsModal() {
+      var d = document.getElementById("awsModal");
+      if (typeof d.showModal === "function") { d.showModal(); }
+      else { d.setAttribute("open", ""); }
+    }
+    function closeAwsModal() {
+      var d = document.getElementById("awsModal");
+      if (typeof d.close === "function") { d.close(); }
+      else { d.removeAttribute("open"); }
+    }
+    (function () {
+      var d = document.getElementById("awsModal");
+      if (!d) return;
+      d.addEventListener("click", function (e) { if (e.target === d) closeAwsModal(); });
+    })();
+
+    // Telecommunications partner announcement dialog
+    function openTelecomModal() {
+      var d = document.getElementById("telecomModal");
+      if (typeof d.showModal === "function") { d.showModal(); }
+      else { d.setAttribute("open", ""); }
+    }
+    function closeTelecomModal() {
+      var d = document.getElementById("telecomModal");
+      if (typeof d.close === "function") { d.close(); }
+      else { d.removeAttribute("open"); }
+    }
+    (function () {
+      var d = document.getElementById("telecomModal");
+      if (!d) return;
+      d.addEventListener("click", function (e) { if (e.target === d) closeTelecomModal(); });
+    })();
 
     // Mobile hamburger nav
     function toggleNav() {
