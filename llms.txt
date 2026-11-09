@@ -1,0 +1,38 @@
+# Kala Roberts — Product Leader
+
+> Kala Roberts is a product leader with 17+ years at Amazon, driving product and technology strategy across Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth, with deep expertise in enterprise AI, platform monetization, subscription and device bundling, and commercial deal constructs.
+
+This is the personal portfolio and professional site of Kala Roberts, a single-page site hosted at https://kalaroberts.github.io/.
+
+## About
+
+Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. She thrives on turning ambiguity into clarity, bringing people together across engineering teams and business leadership to deliver products that matter.
+
+## Career Highlights
+
+- Enterprise AI & Agentic Frameworks: GenAI workflows & agentic PoC design; RAG architecture & data foundations; natural language analytics & multi-source ingestion
+- Scaled Content & Distribution Systems: telecom & ISP distribution; subscription & device bundles; automated marketing & promotions systems
+- Product & Technical Leadership: zero-to-launch ownership & monetization strategy; cross-platform development & cloud strategy; stakeholder collaboration & data governance
+- Sales Enablement & Commercial Constructs: strategic partnerships & guided selling; automated CPQ & free cash flow modeling; B2B, B2C & B2B2C
+
+## Experience
+
+- Principal Product Manager – Tech, Amazon Fuse — Amazon.com, Raleigh, NC (Remote), Nov 2024 – Present
+- Principal Product Manager – Tech, Digital Acceleration — Amazon.com, Arlington, VA (Hybrid), Sep 2023 – Nov 2024
+- Sr. Product Manager – Tech, Digital Acceleration — Amazon.com, Arlington, VA (Hybrid), Jul 2021 – Sep 2023
+- Sr. Product Manager, Sales Enablement Platforms — Amazon Web Services, Arlington, VA (Onsite), Jul 2019 – Jul 2021
+- Sr. Product Manager, Fulfillment by Amazon — Amazon.com, Seattle, WA (Onsite), Jan 2017 – Jul 2019
+- Sr. Program Manager, Finance Technology — Amazon.com, Seattle, WA (Onsite), Nov 2011 – Jan 2017
+- Financial Analyst, Finance Operations — Amazon.com, Seattle, WA (Onsite), Nov 2009 – Nov 2011
+
+## Links
+
+- Live site: https://kalaroberts.github.io/
+- LinkedIn: https://www.linkedin.com/in/kalaroberts/
+- Article — "Lessons Learned Working at Amazon": https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/
+
+## Also includes
+
+- Projects: a highlight reel video of publicly released projects
+- Hobbies: hiking, sailing, horseback riding, cooking recipes from around the world, and acrylic painting (an interactive art gallery)
+- Recommendations: endorsements from colleagues

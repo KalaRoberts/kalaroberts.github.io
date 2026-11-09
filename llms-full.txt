@@ -1,0 +1,99 @@
+# Kala Roberts — Product Leader
+
+> Kala Roberts is a product leader with 17+ years at Amazon, driving product and technology strategy across Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth, with deep expertise in enterprise AI, platform monetization, subscription and device bundling, and commercial deal constructs.
+
+This is the full-content version of the personal portfolio and professional site of Kala Roberts, hosted at https://kalaroberts.github.io/.
+
+## About
+
+Over 17 years at Amazon, Kala Roberts has driven product and tech strategy across multiple business units including Retail Finance, Multi-Channel Fulfillment, AWS, Digital & Devices, and 3P partner distribution. She specializes in delivering products that align customer satisfaction with top-line growth. Throughout her career, she has learned that bringing people together results in the best, most innovative solutions. Whether white boarding ideas across engineering teams or aligning strategic priorities with business leaders, she thrives on turning ambiguity into clarity and delivering products that matter.
+
+## Career Highlights
+
+### Enterprise AI & Agentic Frameworks
+- GenAI Workflows & Agentic PoC Design
+- RAG Architecture & Data Foundations
+- Natural Language Analytics & Multi-source Ingestion
+
+### Scaled Content & Distribution Systems
+- Telecom & ISP Distribution
+- Subscription & Device Bundles
+- Automated Marketing & Promotions Systems
+
+### Product & Technical Leadership
+- Zero-to-Launch Ownership & Monetization Strategy
+- Cross-Platform Development & Cloud Strategy
+- Stakeholder Collaboration & Data Governance
+
+### Sales Enablement & Commercial Constructs
+- Strategic Partnerships & Guided Selling
+- Automated CPQ & Free Cash Flow Modeling
+- Business to Business & Business to Customer & B2B2C
+
+For a deeper look into her approach to navigating ambiguity, scaling global products, and driving high-velocity decision-making, see her article "Lessons Learned Working at Amazon": https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/
+
+## Experience
+
+### Principal Product Manager – Tech, Amazon Fuse
+Amazon.com · Raleigh, NC (Remote) · Nov 2024 – Present
+- Lead end-to-end product strategy and multi-year roadmaps for intelligent targeting, tiered pricing models, service expansion, flexible monetization, and distribution through 150+ telecom partners across 50+ marketplaces.
+- Shape global distribution frameworks and conduct market research for opportunity sizing across multiple digital services, establishing incremental acquisition pipelines in high-penetration locales.
+- Own retail subscription platform enabling 3P vendor subscriptions, growing the subscriber base 27% YoY, achieving a 95% average renewal rate, and increasing revenue by 42% YoY.
+- Spearheaded and launched 4 GenAI applications across Financial Performance, Deal Intelligence, Business Development, and Partner Analytics within 6 months, driving a 25% increase in efficiency.
+
+### Principal Product Manager – Tech, Digital Acceleration
+Amazon.com · Arlington, VA (Hybrid) · Sep 2023 – Nov 2024
+- Single-Threaded Leader for Device and Subscription Bundling, governing the product vision and platform roadmap across 12 cross-functional engineering teams, driving a multi-billion increase in operating profit YoY.
+- Led content distribution architecture across 6 hardware device families (Echo, Fire TV, Tablet, Ring Cam, etc.) and 16 digital subscriptions (Kindle Unlimited, Audible, etc.).
+- Reduced partner onboarding and testing effort from 14 to 8 weeks via automated test case generation, self-service ingestion, and standardized technical specifications.
+- Designed a lifecycle entitlement and incentive engine, orchestrating automated customer journeys that incentivized over 1B high value user actions.
+
+### Sr. Product Manager – Tech, Digital Acceleration
+Amazon.com · Arlington, VA (Hybrid) · Jul 2021 – Sep 2023
+- Architected and scaled a multi-tenant customer engagement platform featuring configurable event-driven integration layers, enabling all clients to use custom event triggers and automate real-time customer journeys.
+- Established a shift in platform metrics from raw open/click rates to High-Value Action (HVA) lifecycle tracking (streaming, listening, shopping) for downstream monetization.
+- Integrated ML models into A/B testing experiment frameworks, expanding marketing reach by 41% YoY while reducing unsubscribe rates from 16.7% to 4.76%.
+
+### Sr. Product Manager, Sales Enablement Platforms
+Amazon Web Services · Arlington, VA (Onsite) · Jul 2019 – Jul 2021
+- Architected a contract lifecycle management platform, consolidating 12+ fragmented tools into an intelligent interface processing 60% of AWS revenue and cutting deal cycle times by 50%.
+- Managed, mentored, and developed a team of solution designers and product managers focused on seller enablement, CPQ automation, and quote-to-contract friction reduction.
+- Devised executive deal-approval governance frameworks and real-time margin analytics, improving deal profitability visibility for AWS field sales reps and sales operations.
+
+### Sr. Product Manager, Fulfillment by Amazon
+Amazon.com · Seattle, WA (Onsite) · Jan 2017 – Jul 2019
+- Pioneered and launched a cloud-native warehouse management SaaS, converting merchant facilities into Prime fulfillment nodes, generating operating profit 27% higher than benchmark and adding 200k+ new products to Prime selection.
+- Owned the strategy for dangerous goods expansion including cross-border controls, adding 170k new catalog products and driving multi-billion dollar projected incremental annualized revenue.
+- Automated seller site deployment and configuration, reducing launch lead time from 8 weeks to 2 days across 27 distinct system steps.
+
+### Sr. Program Manager, Finance Technology
+Amazon.com · Seattle, WA (Onsite) · Nov 2011 – Jan 2017
+- Led global finance platform expansion across 13 international marketplaces, establishing automated financial controls that reduced global billing defects by 45%.
+- Contributed to the WW Supplier Contract System audit presented to SVP/CFO leadership, remediating critical landed-cost variances and tightening administrative access controls.
+
+### Financial Analyst, Finance Operations
+Amazon.com · Seattle, WA (Onsite) · Nov 2009 – Nov 2011
+- Architected vendor returns costing logic and dispute resolution workflows across 6 global marketplaces, accelerating defect resolution times by 44% and increasing quality ratings by 4%.
+- Authored functional specifications for self-service vendor applications, streamlining damage claims, packaging defect investigations, and price protection reimbursements.
+
+## Recommendations
+
+Head of Product Management, Digital Acceleration:
+"Kala has the exceptional ability to bridge the gap between complex technical challenges and business objectives. Her deep understanding of our technology ecosystem, combined with her product vision, enabled her to drive solutions that significantly improved our product offerings. She very quickly produces high-quality artifacts that articulate intricate technical strategies in a way that resonates with both technical and non-technical stakeholders. She also has a great understanding of UX and Design. Her collaborative spirit and commitment to raising the bar make her an invaluable asset to any organization. I wholeheartedly recommend Kala for any technical product leadership role."
+
+Head of Program Management, Finance Technology:
+"It's rare to find standout talent like Kala. I had the pleasure of having Kala report to me for three years at Amazon. She is reliable and solid. Her ability to juggle multiple projects while at the same time taking them to the next level was unlike any I've seen before. I was particularly impressed by Kala's ability to learn complex subjects and systems quickly, proceed to formulate a vision, and work closely with partner teams to deliver strong results. Kala is someone I admire professionally and personally. I was very sad to see her leave my team, but at the same time, I was excited for her. As a colleague or leader, I am confident that Kala would be an asset to any team."
+
+## Hobbies
+
+Kala enjoys hiking, sailing, and horseback riding. She also loves experimenting with different recipes from cultures around the world to try with her family. Lately, she has gotten into acrylic painting. Her featured works:
+
+- "My version of Starry Night": I've always been drawn to Starry Night — the way Van Gogh turned a quiet night into something that comes alive — so I tried to recreate it. What I loved most about this painting was letting go of perfection. Not replicating a scene, but going with the flow.
+- "Owning the Night": I painted these women as pure color and posture. Strip away the details and what's left is friendship and confidence.
+- "Autumn Geese": I enjoy hiking in all seasons, but especially fall. It's the perfect weather here on the east coast, the surroundings are vibrant with color, and if you hike early enough it's peaceful — the stillness only broken by surrounding wildlife. I painted this to remind me of the serenity I find in nature.
+
+## Links
+
+- Live site: https://kalaroberts.github.io/
+- LinkedIn: https://www.linkedin.com/in/kalaroberts/
+- Article — "Lessons Learned Working at Amazon": https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/
