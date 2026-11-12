@@ -24,7 +24,7 @@ A clean, one-page site featuring:
 - **Visuals:** Custom animated particle-network background via HTML canvas
 - **Accessibility:** Semantic HTML landmarks, keyboard-focusable cards with visible focus rings, `aria-label`s on icon links and modals, native `<dialog>` modals (video reel, testimonials, and art lightbox) and `<details>`/`<summary>` collapsible cards, `prefers-reduced-motion` compliance, and descriptive `alt` text throughout
 - **Performance:** Fully responsive (mobile-first) design, dark theme, lazy-loaded imagery, on-demand video loading, and optimized media assets
-- **Analytics:** Integrated via Google Tag Manager
+- **Analytics:** Google Analytics 4 via the Google tag (gtag.js)
 - **SEO & Search:** Semantic HTML landmarks (`<main>`, single `<h1>`, clean heading hierarchy), canonical URL, descriptive meta tags, Open Graph / Twitter social preview tags with a custom 1200×630 share card and `summary_large_image` card type (plus large image-preview hints for rich search thumbnails), JSON-LD `Person` structured data, a `sitemap.xml` + `robots.txt`, `llms.txt` + `llms-full.txt` summaries for AI crawlers, and Google Search Console verification for indexing
 
 ## Repository Structure
