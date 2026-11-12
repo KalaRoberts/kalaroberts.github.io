@@ -1463,5 +1463,41 @@ footer {
       }
     })();
   </script>
+  <script>
+    // GA4 custom click tracking
+    (function () {
+      function track(name, params) {
+        if (typeof gtag === "function") gtag("event", name, params || {});
+      }
+      function label(el) {
+        return (el.getAttribute("aria-label") || el.innerText || "").trim().replace(/\s+/g, " ").slice(0, 100);
+      }
+      document.addEventListener("click", function (e) {
+        var el = e.target.closest("a, button");
+        if (!el) return;
+        if (el.classList.contains("art-piece")) {
+          track("art_view", { art_title: el.dataset.title });
+        } else if (el.classList.contains("reel-card")) {
+          track("card_open", { card_name: label(el) });
+        } else if (el.closest("#siteNav")) {
+          track("nav_click", { section: el.getAttribute("href") });
+        } else if (el.tagName === "A" && el.href.indexOf("kala-highlights.mp4") !== -1) {
+          track("video_download", {});
+        } else if (el.tagName === "A" && el.hostname && el.hostname !== location.hostname) {
+          track("outbound_click", { link_text: label(el), link_url: el.href });
+        }
+      });
+      document.addEventListener("toggle", function (e) {
+        var d = e.target;
+        if (d.tagName === "DETAILS" && d.open) {
+          var s = d.querySelector("summary");
+          track("experience_expand", { role: s ? label(s) : "" });
+        }
+      }, true);
+      document.addEventListener("play", function (e) {
+        if (e.target.tagName === "VIDEO") track("video_play", { video: "Amazon Project Highlights" });
+      }, true);
+    })();
+  </script>
 </body>
 </html>
