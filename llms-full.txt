@@ -104,8 +104,13 @@ Kala enjoys hiking, sailing, and horseback riding. She also loves experimenting 
 - "Owning the Night": I painted these women as pure color and posture. Strip away the details and what's left is friendship and confidence.
 - "Autumn Geese": I enjoy hiking in all seasons, but especially fall. It's the perfect weather here on the east coast, the surroundings are vibrant with color, and if you hike early enough it's peaceful — the stillness only broken by surrounding wildlife. I painted this to remind me of the serenity I find in nature.
 
+## About This Site
+
+Kala designed, built, and deployed this site herself. It is a hand-coded single page written in plain HTML5, CSS3, and vanilla JavaScript, with no frameworks, libraries, or build step. It runs on GitHub Pages, and the highlights video is served from Cloudflare R2 object storage. The site uses native browser features for its popups and expandable sections, includes an animated canvas background that respects reduced-motion settings, and was built with accessibility, search visibility (structured data, sitemap, and Search Console), and Google Analytics 4 event tracking in mind. The source code is public at https://github.com/KalaRoberts/kalaroberts.github.io.
+
 ## Links
 
 - Live site: https://kalaroberts.github.io/
 - LinkedIn: https://www.linkedin.com/in/kalaroberts/
 - Article — "Lessons Learned Working at Amazon": https://www.linkedin.com/pulse/lessons-learned-working-amazon-14-years-kala-roberts/
+- Source code: https://github.com/KalaRoberts/kalaroberts.github.io

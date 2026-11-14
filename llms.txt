@@ -37,3 +37,4 @@ Over 17 years at Amazon, Kala Roberts has driven product and tech strategy acros
 - Perspectives: the article "Lessons Learned Working at Amazon" and an embedded Amazon project highlights reel (video)
 - Hobbies: hiking, sailing, horseback riding, cooking recipes from around the world, and acrylic painting (an interactive art gallery)
 - Recommendations: endorsements from colleagues
+- About this site: designed, built, and deployed by Kala in plain HTML, CSS, and JavaScript (no frameworks or build step), hosted on GitHub Pages; source at https://github.com/KalaRoberts/kalaroberts.github.io
