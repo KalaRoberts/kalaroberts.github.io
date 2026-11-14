@@ -33,7 +33,7 @@ A clean, one-page site featuring:
 index.html                       Single-file core architecture (HTML + CSS + JS inline)
 kala-headshot.jpg                Hero professional headshot
 og-card.jpg                      1200×630 Open Graph / Twitter social share card
-kala-highlights.mp4              Amazon project highlights reel (opens in a modal)
+(kala-highlights.mp4)            Amazon project highlights reel (opens in a modal), hosted on Cloudflare R2, not in this repo
 kala-highlights-poster.jpg       Poster frame for the reel video player
 kala-highlights-thumb.jpg        Banner thumbnail for the highlights reel card
 leadership-principles-thumb.jpg  Banner thumbnail for the Writing & Reflections card
